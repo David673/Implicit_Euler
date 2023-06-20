@@ -35,12 +35,14 @@ tmax = 60
 stepspersecond = 1000 #number of Euler timesteps
 plotpointspersecond = 20
 params = [mass1,mass2,L1,L2,g]
+#x0=[0,0,-9.,5.]
 x0=[0,0,-9.,5.]
 
 steps = stepspersecond*tmax
 timesteps = collect(range(0,stop=tmax,length=steps))
 
 x =discreteEuler(simplependulum!,params,x0,timesteps)
+# x =discreteEuler(DAEpendulum!,params,x0,timesteps)
 
 println("Simulation Complete")
 
